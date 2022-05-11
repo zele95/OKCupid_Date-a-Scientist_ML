@@ -23,7 +23,7 @@ def get_part_of_speech(word):
   return most_likely_part_of_speech
 
 def preprocess_text(text):
-  cleaned = re.sub(r'\W+', ' ', text).lower()
+  cleaned = re.sub(r'(\W+|_+)', ' ', text).lower()
   tokenized = word_tokenize(cleaned)
   normalized = " ".join([normalizer.lemmatize(token, get_part_of_speech(token)) for token in tokenized if not re.match(r'\d+',token)])
   return normalized
