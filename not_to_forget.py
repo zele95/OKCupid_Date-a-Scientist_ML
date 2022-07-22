@@ -29,6 +29,48 @@ print(cleaned)
 #                         'capricorn':11},inplace = True)
 
 sklearn.preprocessing.LabelEncoder
+
+# %%
+# if essay_questions:
+#     # set final data matrices
+#     training_data = X_train[list(cat_features.columns)].values
+#     test_data = X_test[list(cat_features.columns)].values
+
+#     # get feature vectors for each essay column and join them together
+#     for column in list(X_train.loc[:,'essay0':'essay9'].columns):
+#         # innitialize CountVectorizer for each column
+#         cv = CountVectorizer(stop_words = 'english')
+
+#         # fit the vectorizer and transform training data
+#         X_train_cv = cv.fit_transform(X_train[column])
+#         # merge the vector with others
+#         training_data = hstack((training_data, X_train_cv))
+
+#         # transform and merge the test data
+#         X_test_cv = cv.transform(X_test[column])
+#         test_data = hstack((test_data, X_test_cv))
+# else:
+#     training_data = X_train
+#     test_data = X_test
+
+# # set label data
+# training_labels = y_train
+# test_labels = y_test
+
+# Scale the feature data so it has mean = 0 and standard deviation = 1
+# stdScaler = StandardScaler(with_mean=False)
+# X_train_sc = stdScaler.fit(training_data)
+# X_train_std = X_train_sc.transform(training_data)
+# X_test_std = X_train_sc.transform(test_data)
+
+
+# if essay_questions == False:
+#     X_train_std = pd.DataFrame(X_train_std, columns = X_train.columns)
+#     X_test_std = pd.DataFrame(X_test_std,  columns = X_train.columns)
+
+
+
+
 # %%
 training_data = None
 test_data = None
